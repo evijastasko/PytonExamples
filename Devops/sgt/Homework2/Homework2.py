@@ -14,7 +14,7 @@ print(x)
 
 #Task3
 
-def sum_numbers(*numbers: tuple) ->float:
+def sum_numbers(*numbers: float) ->float:
     """"Sums all the numbers in the list"""
     return sum(numbers)
 print(sum_numbers(1.1, 2.2, 5.5))
