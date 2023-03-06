@@ -1,6 +1,6 @@
 # Subtrat five days from the current date
 import datetime
-from datetime import date
-today = date.today()
+
+today = today = datetime.date.today()
 date = today - datetime.timedelta(days=5)
 print(date)
