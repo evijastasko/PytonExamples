@@ -1,5 +1,6 @@
 # System audit
 import os
+import os
 from datetime import date
 
 today = date.today()
@@ -9,13 +10,12 @@ surname = input("What is your last name? ")
 ID = input("What is your ID number? ")
 
 directory = today
-print(directory)
 parent_dir = "/home/sgtuser/homework5"
-path = os.path.join(parent_dir, directory)
+path = os.path.join(parent_dir, str(directory))
 
 #def make_directory() :
-if not path.exists(today):
-    makedirs(today)
+if not os.path.exists(path):
+    os.makedirs(path)
 
 filename = ID + ".txt"
 #def create_file() :
