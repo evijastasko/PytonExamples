@@ -24,7 +24,7 @@ with open(filename, "a") as f:
 
 #def output() :
 for file in os.listdir(path):
-    with open(path.join(today_date, file), "r") as f:
+    with open(path), "r") as f:
         print(f.read())
 
 
