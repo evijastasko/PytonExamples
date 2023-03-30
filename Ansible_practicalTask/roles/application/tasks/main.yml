@@ -1,0 +1,11 @@
+- name: "create a directory for application"
+  ansible.builtin.file:
+    path: /home/evija_stasko/application
+    state: directory
+
+- name: "Clone a github repository"
+  git:
+    repo: https://github.com/evijastasko/PytonExamples2
+    dest: /home/evija_stasko/application
+    clone: yes
+    update: yes

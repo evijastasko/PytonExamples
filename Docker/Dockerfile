@@ -1,0 +1,5 @@
+FROM centos:centos7
+ENV APP_VERSION=1.0.0
+ENV WGET_VERSION=1.14
+
+RUN yum install -y wget-$WGET_VERSION

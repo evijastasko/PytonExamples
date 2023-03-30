@@ -1,0 +1,14 @@
+- name: 'run apt update'
+  apt:
+    name: '*'
+    state: latest
+
+- name: "install git"
+  package:
+    name: git
+    state: present
+
+- name: "install python"
+  package:
+    name: python3
+    state: present

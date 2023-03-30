@@ -1,0 +1,6 @@
+---
+- hosts: sgt
+  become: true
+  roles:
+    - install
+    - encrypted_files

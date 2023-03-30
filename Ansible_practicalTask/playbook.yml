@@ -1,0 +1,8 @@
+---
+- hosts: sgt
+  become: true
+  roles:
+    - install
+    - users
+    - application
+

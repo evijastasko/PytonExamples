@@ -1,0 +1,24 @@
+- name: "create evija_stasko user"
+  ansible.builtin.user:
+    name: evija_stasko
+    state: present
+    createhome: yes
+    password_lock: yes
+
+- name: "create a directory .ssh"
+  ansible.builtin.file:
+    path: /home/evija_stasko/.ssh
+    state: directory
+    mode: 700
+    owner: evija_stasko
+    group: evija_stasko
+
+- name: "upload public ssh key"
+  copy:
+    src: /home/sgtuser/evijakey2.pub
+    dest: /home/evija_stasko/.ssh/authorized_keys
+    mode: 700
+    owner: evija_stasko
+    group: evija_stasko
+
+

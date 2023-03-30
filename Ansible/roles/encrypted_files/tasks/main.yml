@@ -1,0 +1,5 @@
+- name: Uploading passwords file
+  copy:
+    src: "passwords.txt"
+    dest: "/home/ubuntu"
+    mode: u=rwx,g=r
