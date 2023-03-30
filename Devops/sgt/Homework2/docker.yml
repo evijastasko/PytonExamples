@@ -1,0 +1,29 @@
+version: '3'
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=qwerty
+  mongo-express:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=qwerty
+
+
+
+
+  [7:01 PM]
+  docker run -d \
+  -p 8081:8081 \
+  -e ME_CONFIG_MONGODB_ADMINUSERNAME=user \
+  -e ME_CONFIG_MONGODB_ADMINPASSWORD=qwerty \
+  --net mongo-network \
+  --name mongo-express \
+  -e ME_CONFIG_MONGODB_SERVER=mongodb \
+  mongo-express

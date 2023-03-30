@@ -1,0 +1,5 @@
+[sgt]
+EVIJAS_ANSIBLE ansible_host=16.16.4.124
+
+[sgt:vars]
+ansible_user=ubuntu
