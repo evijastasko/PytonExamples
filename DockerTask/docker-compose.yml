@@ -1,10 +1,10 @@
-version: "3"
+version: "3.8"
 
 services:
   mysql:
-    image: mysql:latest #from dockerhub
+    image: mysql:latest
     container_name: mysql
-    environment: #jaskatas, kas ir noradits dockerhub, kas ir jaieklauj
+    environment:
       MYSQL_ROOT_PASSWORD: sgt2023
       MYSQL_DATABASE: db
       MYSQL_USER: Evija
@@ -16,8 +16,9 @@ services:
         aliases:
           - mysql
   python:
-    build: . #will use current folder
+    build: .
     container_name: python
+    restart: always
     depends_on:
       - mysql
     networks:
@@ -25,10 +26,11 @@ services:
 
 networks:
   mysql-network:
-    driver:  #lai savienotu mysql & pyton
+    driver: bridge
 
 volumes:
   mysql-data:
-    driver: local #saved on local disk
-      d
+    driver: local
+
+
 

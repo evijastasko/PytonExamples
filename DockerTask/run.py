@@ -9,9 +9,9 @@ def connect_to_mysql():
     while time.time() - start_time < timeout:
         try:
             connection = mysql.connector.connect(
-                host="myssql",
-                user="edgars",
-                password="qwerty",
+                host="mysql",
+                user="Evija",
+                password="sgt2023",
                 database="db"
             )
             print("Connected to MySQL")
@@ -37,4 +37,3 @@ if name == "main":
             time.sleep(5)
     except KeyboardInterrupt:
         print("Stopping script")
-pip freeze > requrirements.txt
