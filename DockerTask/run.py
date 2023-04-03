@@ -9,9 +9,9 @@ def connect_to_mysql():
     while time.time() - start_time < timeout:
         try:
             connection = mysql.connector.connect(
-                host="myssql",
-                user="edgars",
-                password="qwerty",
+                host="mysql",
+                user="evija",
+                password="sgt2023",
                 database="db"
             )
             print("Connected to MySQL")
