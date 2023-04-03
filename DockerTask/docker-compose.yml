@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  mysql:
+    image: mysql:latest #from dockerhub
+    container_name: mysql
+    environment: #jaskatas, kas ir noradits dockerhub, kas ir jaieklauj
+      MYSQL_ROOT_PASSWORD: sgt2023
+      MYSQL_DATABASE: db
+      MYSQL_USER: Evija
+      MYSQL_PASSWORD: sgt2023
+    volumes:
+      - mysql-data:/var/lib/mysql
+    networks:
+      mysql-network:
+        aliases:
+          - mysql
+  python:
+    build: . #will use current folder
+    container_name: python
+    depends_on:
+      - mysql
+    networks:
+      - mysql-network
+
+networks:
+  mysql-network:
+    driver:  #lai savienotu mysql & pyton
+
+volumes:
+  mysql-data:
+    driver: local #saved on local disk
+      d
+
