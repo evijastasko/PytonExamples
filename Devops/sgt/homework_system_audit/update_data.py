@@ -9,16 +9,16 @@ try:
         "database": "system_audit"
     }
     with connect(**configValue) as connection:
-        name = "Evija"
+        user_id = 123
         surname = "Berzina"
 
         update_query = """
         UPDATE User_information
         SET surname = %s
-        WHERE name = %s;
+        WHERE user_id = %s;
         """
         with connection.cursor() as cursor:
-            cursor.execute(update_query, (surname, name))
+            cursor.execute(update_query, (surname, user_id))
             connection.commit()
 except Error as e:
     print(e)
