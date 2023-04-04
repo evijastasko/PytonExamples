@@ -3,10 +3,11 @@ from decouple import config
 
 try:
     configValue = {
-        "host": "localhost",
+        "host": "127.0.0.1",
         "user": config("username"),
         "password": config("password"),
-        "database": "system_audit"
+        "database": "system_audit",
+        "port": "3306"
     }
     with connect(**configValue) as connection:
         insert_Audit_log = """
